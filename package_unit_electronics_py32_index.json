@@ -15,13 +15,12 @@
           "version": "0.1.4",
           "category": "Contributed",
           "help": {
-            "online": "https://github.com/py32duino/Arduino-PY32"
+            "online": "https://github.com/UNIT-Electronics-MX/unit_electronics_py32_arduino_package"
           },
-"url": "https://github.com/Cesarbautista10/Arduino-PY32/releases/download/0.1.4/PenguinDuino.zip",
-"archiveFileName": "PenguinDuino.zip",
-"checksum": "SHA-256:eb113b7095c55f0fafc18194f0f7c9988e19bc073780297469925d6a1c2bc01b",
-"size": "3694182",
-
+          "url": "https://github.com/UNIT-Electronics-MX/unit_electronics_py32_arduino_package/releases/download/v0.1.4/UNIT_Electronics_PY32_0.1.4.zip",
+          "archiveFileName": "UNIT_Electronics_PY32_0.1.4.zip",
+          "checksum": "SHA-256:dadc90045a867d949aa2f97aa646650f87582045c4d1e4d63f61239c11059eeb",
+          "size": "263685947",
           "boards": [
             { "name": "PY32F003 Mini Dev" },
             { "name": "PY32F030 Eval Board" }
