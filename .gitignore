@@ -1,0 +1,27 @@
+# Release files
+DEPLOYMENT_STEPS.md
+*.zip
+
+# Temporary files
+temp_package_*/
+*.backup
+*.old
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Build artifacts
+*.o
+*.elf
+*.bin
+*.hex
