@@ -1,7 +1,7 @@
 {
   "packages": [
     {
-      "name": "UNIT Electronics PY32",
+      "name": "UNIT_Electronics_PY32",
       "maintainer": "UNIT-Electronics-MX",
       "websiteURL": "https://github.com/UNIT-Electronics-MX",
       "email": "HalfSweet@HalfSweet.cn",
@@ -27,17 +27,17 @@
           ],
           "toolsDependencies": [
             {
-              "packager": "UNIT Electronics PY32",
+              "packager": "UNIT_Electronics_PY32",
               "name": "xpack-arm-none-eabi-gcc",
               "version": "12.2.1-1.1"
             },
             {
-              "packager": "UNIT Electronics PY32",
+              "packager": "UNIT_Electronics_PY32",
               "name": "CMSIS",
               "version": "5.7.0"
             },
             {
-              "packager": "UNIT Electronics PY32",
+              "packager": "UNIT_Electronics_PY32",
               "name": "pyocd",
               "version": "0.1.3"
             }
