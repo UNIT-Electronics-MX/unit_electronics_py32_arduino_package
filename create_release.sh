@@ -19,9 +19,14 @@ mkdir -p "${TEMP_DIR}"
 
 echo "[1/5] Copying package files..."
 # Create a directory with the version name as Arduino expects
-mkdir -p "${TEMP_DIR}/0.1.4"
-# Copy all the content from the 0.1.4 directory
-cp -r UNIT_Electronics_PY32/hardware/py32/0.1.4/* "${TEMP_DIR}/0.1.4/"
+mkdir -p "${TEMP_DIR}/${VERSION}"
+# Copy all the content from the version directory
+cp -r UNIT_Electronics_PY32/hardware/py32/${VERSION}/* "${TEMP_DIR}/${VERSION}/"
+# Copy Misc directory (contains pyocd.yaml)
+if [ -d "UNIT_Electronics_PY32/hardware/py32/Misc" ]; then
+    mkdir -p "${TEMP_DIR}/Misc"
+    cp -r UNIT_Electronics_PY32/hardware/py32/Misc/* "${TEMP_DIR}/Misc/"
+fi
 
 echo "[2/5] Cleaning temporary files..."
 # Remove backup and temporary files
@@ -32,9 +37,9 @@ find "${TEMP_DIR}" -name "*.pyc" -delete
 find "${TEMP_DIR}" -name "__pycache__" -type d -exec rm -rf {} + 2>/dev/null
 
 echo "[3/5] Creating ZIP archive..."
-# Create the ZIP file - the root of the ZIP should contain only the 0.1.4 directory
+# Create the ZIP file - the root of the ZIP should contain the version directory and Misc
 cd "${TEMP_DIR}"
-zip -r "../${OUTPUT_ZIP}" "0.1.4" -q
+zip -r "../${OUTPUT_ZIP}" * -q
 cd ..
 
 echo "[4/5] Calculating SHA-256 checksum..."

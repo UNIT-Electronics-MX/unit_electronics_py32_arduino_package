@@ -1,0 +1,3 @@
+pyocd.name=pyOCD Debugger
+pyocd.protocol=pyocd
+pyocd.tool=pyocd

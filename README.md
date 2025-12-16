@@ -44,23 +44,41 @@ https://raw.githubusercontent.com/UNIT-Electronics-MX/unit_electronics_py32_ardu
 
 ### 4. Install PyOCD (Required)
 
-#### Linux
+#### Linux (Recommended: using pipx)
+```bash
+sudo apt update && sudo apt install -y pipx
+pipx ensurepath
+# Close and reopen terminal, or run: source ~/.bashrc
+pipx install pyocd
+# Create symlink for Arduino IDE (requires version 0.1.5+)
+sudo ln -sf ~/.local/bin/pyocd /usr/local/bin/pyocd
+sudo usermod -a -G dialout $USER  # Log out and back in
+```
+
+#### Linux (Alternative: using pip)
 ```bash
 sudo apt-get install python3 python3-pip
-pip3 install pyocd
+pip3 install --user pyocd
+# Create symlink for Arduino IDE (requires version 0.1.5+)
+sudo ln -sf ~/.local/bin/pyocd /usr/local/bin/pyocd
 sudo usermod -a -G dialout $USER  # Log out and back in
 ```
 
 #### macOS
 ```bash
-brew install python3
-pip3 install pyocd
+brew install pipx
+pipx ensurepath
+# Close and reopen terminal
+pipx install pyocd
 ```
 
 #### Windows
 ```bash
 # Install Python from python.org (check "Add to PATH")
-pip install pyocd
+pip install pipx
+pipx ensurepath
+# Restart terminal
+pipx install pyocd
 ```
 
 ### 5. Start Programming!
