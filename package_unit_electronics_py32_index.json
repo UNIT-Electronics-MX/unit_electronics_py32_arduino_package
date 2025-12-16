@@ -53,8 +53,8 @@
           },
           "url": "https://github.com/UNIT-Electronics-MX/unit_electronics_py32_arduino_package/releases/download/v0.1.5/UNIT_Electronics_PY32_0.1.5.zip",
           "archiveFileName": "UNIT_Electronics_PY32_0.1.5.zip",
-          "checksum": "SHA-256:65b68a9d07c5af1c0ebeba58fb7a4c3bc779bb43ad1ec933f3ed98149460f1b3",
-          "size": "3875941",
+          "checksum": "SHA-256:58e44688f628556ee6c4d2f2a017e6f07ac3e4c3d6314e241e42ae5175bae03c",
+          "size": "5602102",
           "boards": [
             { "name": "PY32F003 Mini Dev" },
             { "name": "PY32F030 Eval Board" }
@@ -87,8 +87,8 @@
           },
           "url": "https://github.com/UNIT-Electronics-MX/unit_electronics_py32_arduino_package/releases/download/v0.1.4/UNIT_Electronics_PY32_0.1.4.zip",
           "archiveFileName": "UNIT_Electronics_PY32_0.1.4.zip",
-          "checksum": "SHA-256:e37c68f722405382ba4190792bcf8d75ab28194ea9da2ffa8eca240c75ab4b00",
-          "size": "3876801",
+          "checksum": "SHA-256:8533ec673cfd15c0cf32deaf89e4910b6818462b07df410ff32a3c3900948735",
+          "size": "5602094",
           "boards": [
             { "name": "PY32F003 Mini Dev" },
             { "name": "PY32F030 Eval Board" }
