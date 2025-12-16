@@ -18,8 +18,8 @@ TEMP_DIR="temp_package_${VERSION}"
 mkdir -p "${TEMP_DIR}"
 
 echo "[1/5] Copying package files..."
-# Copy the entire UNIT_Electronics_PY32 directory structure
-cp -r UNIT_Electronics_PY32 "${TEMP_DIR}/"
+# Copy only the hardware/py32/0.1.4 content (this is what Arduino expects)
+cp -r UNIT_Electronics_PY32/hardware/py32/0.1.4/* "${TEMP_DIR}/"
 
 echo "[2/5] Cleaning temporary files..."
 # Remove backup and temporary files
@@ -30,10 +30,10 @@ find "${TEMP_DIR}" -name "*.pyc" -delete
 find "${TEMP_DIR}" -name "__pycache__" -type d -exec rm -rf {} + 2>/dev/null
 
 echo "[3/5] Creating ZIP archive..."
-# Create the ZIP file
-cd "${TEMP_DIR}/UNIT_Electronics_PY32"
-zip -r "../../${OUTPUT_ZIP}" * -q
-cd ../..
+# Create the ZIP file from the temp directory
+cd "${TEMP_DIR}"
+zip -r "../${OUTPUT_ZIP}" * -q
+cd ..
 
 echo "[4/5] Calculating SHA-256 checksum..."
 # Calculate checksum
