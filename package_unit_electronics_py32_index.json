@@ -53,8 +53,8 @@
           },
           "url": "https://github.com/UNIT-Electronics-MX/unit_electronics_py32_arduino_package/releases/download/v0.1.5/UNIT_Electronics_PY32_0.1.5.zip",
           "archiveFileName": "UNIT_Electronics_PY32_0.1.5.zip",
-          "checksum": "SHA-256:b8de8313df385ba084df9e3a2a7d54efca1e3ebc9d94f098b4e2a33e10cc7ccb",
-          "size": "3863909",
+          "checksum": "SHA-256:65b68a9d07c5af1c0ebeba58fb7a4c3bc779bb43ad1ec933f3ed98149460f1b3",
+          "size": "3875941",
           "boards": [
             { "name": "PY32F003 Mini Dev" },
             { "name": "PY32F030 Eval Board" }
