@@ -18,8 +18,10 @@ TEMP_DIR="temp_package_${VERSION}"
 mkdir -p "${TEMP_DIR}"
 
 echo "[1/5] Copying package files..."
-# Copy only the hardware/py32/0.1.4 content (this is what Arduino expects)
-cp -r UNIT_Electronics_PY32/hardware/py32/0.1.4/* "${TEMP_DIR}/"
+# Create a directory with the version name as Arduino expects
+mkdir -p "${TEMP_DIR}/0.1.4"
+# Copy all the content from the 0.1.4 directory
+cp -r UNIT_Electronics_PY32/hardware/py32/0.1.4/* "${TEMP_DIR}/0.1.4/"
 
 echo "[2/5] Cleaning temporary files..."
 # Remove backup and temporary files
@@ -30,15 +32,20 @@ find "${TEMP_DIR}" -name "*.pyc" -delete
 find "${TEMP_DIR}" -name "__pycache__" -type d -exec rm -rf {} + 2>/dev/null
 
 echo "[3/5] Creating ZIP archive..."
-# Create the ZIP file from the temp directory
+# Create the ZIP file - the root of the ZIP should contain only the 0.1.4 directory
 cd "${TEMP_DIR}"
-zip -r "../${OUTPUT_ZIP}" * -q
+zip -r "../${OUTPUT_ZIP}" "0.1.4" -q
 cd ..
 
 echo "[4/5] Calculating SHA-256 checksum..."
 # Calculate checksum
 CHECKSUM=$(sha256sum "${OUTPUT_ZIP}" | awk '{print $1}')
-SIZE=$(stat -c%s "${OUTPUT_ZIP}" 2>/dev/null || stat -f%z "${OUTPUT_ZIP}")
+# Get file size (works on both Linux and macOS)
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    SIZE=$(stat -f%z "${OUTPUT_ZIP}")
+else
+    SIZE=$(stat -c%s "${OUTPUT_ZIP}")
+fi
 
 echo ""
 echo "=========================================="
