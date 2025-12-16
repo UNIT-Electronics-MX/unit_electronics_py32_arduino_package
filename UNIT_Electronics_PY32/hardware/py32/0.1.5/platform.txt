@@ -222,11 +222,11 @@ tools.pyocd.cmd.windows=pyocd
 tools.pyocd.upload.protocol=cmsis-dap
 tools.pyocd.upload.params.verbose=
 tools.pyocd.upload.params.quiet=
-tools.pyocd.upload.pattern_args=load "{build.path}/{build.project_name}.hex" -t {build.pyocd_target} --config "{runtime.platform.path}/Misc/pyocd.yaml"
+tools.pyocd.upload.pattern_args=load "{build.path}/{build.project_name}.hex" -t {build.pyocd_target} --pack "{runtime.platform.path}/Misc/Puya.PY32.pack" --frequency 1000000
 tools.pyocd.upload.pattern="{cmd}" {upload.pattern_args}
 
 tools.pyocd.erase.protocol=cmsis-dap
 tools.pyocd.erase.params.verbose=
 tools.pyocd.erase.params.quiet=
-tools.pyocd.erase.pattern_args=erase -t {build.pyocd_target} --chip --config "{runtime.platform.path}/Misc/pyocd.yaml"
+tools.pyocd.erase.pattern_args=erase -t {build.pyocd_target} --chip --pack "{runtime.platform.path}/Misc/Puya.PY32.pack" --frequency 1000000
 tools.pyocd.erase.pattern="{cmd}" {erase.pattern_args}"
