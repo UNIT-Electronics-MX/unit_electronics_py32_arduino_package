@@ -31,9 +31,9 @@ find "${TEMP_DIR}" -name "__pycache__" -type d -exec rm -rf {} + 2>/dev/null
 
 echo "[3/5] Creating ZIP archive..."
 # Create the ZIP file
-cd "${TEMP_DIR}"
-zip -r "../${OUTPUT_ZIP}" UNIT_Electronics_PY32 -q
-cd ..
+cd "${TEMP_DIR}/UNIT_Electronics_PY32"
+zip -r "../../${OUTPUT_ZIP}" * -q
+cd ../..
 
 echo "[4/5] Calculating SHA-256 checksum..."
 # Calculate checksum
