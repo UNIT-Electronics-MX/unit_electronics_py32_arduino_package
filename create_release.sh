@@ -18,14 +18,14 @@ TEMP_DIR="temp_package_${VERSION}"
 mkdir -p "${TEMP_DIR}"
 
 echo "[1/5] Copying package files..."
-# Create a directory with the version name as Arduino expects
-mkdir -p "${TEMP_DIR}/${VERSION}"
+# Create a directory with the package name as Arduino expects (not version number!)
+mkdir -p "${TEMP_DIR}/UNIT_Electronics_PY32"
 # Copy all the content from the version directory
-cp -r UNIT_Electronics_PY32/hardware/py32/${VERSION}/* "${TEMP_DIR}/${VERSION}/"
-# Copy Misc directory (contains pyocd.yaml)
+cp -r UNIT_Electronics_PY32/hardware/py32/${VERSION}/* "${TEMP_DIR}/UNIT_Electronics_PY32/"
+# Copy Misc directory INSIDE the package directory (contains pyocd.yaml)
 if [ -d "UNIT_Electronics_PY32/hardware/py32/Misc" ]; then
-    mkdir -p "${TEMP_DIR}/Misc"
-    cp -r UNIT_Electronics_PY32/hardware/py32/Misc/* "${TEMP_DIR}/Misc/"
+    mkdir -p "${TEMP_DIR}/UNIT_Electronics_PY32/Misc"
+    cp -r UNIT_Electronics_PY32/hardware/py32/Misc/* "${TEMP_DIR}/UNIT_Electronics_PY32/Misc/"
 fi
 
 echo "[2/5] Cleaning temporary files..."
