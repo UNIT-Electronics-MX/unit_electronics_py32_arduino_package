@@ -1,2 +1,2 @@
 pack:
-  - Puya.PY32.pack
+  - ${config_dir}/Puya.PY32.pack
